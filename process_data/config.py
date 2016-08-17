@@ -3,7 +3,8 @@ import sqlite3
 from datetime import date
 
 DIRS = {
-    'SOURCE_DIR': 'C:\\Users\\WY-ZY\\OneDrive\\Data\\',
+    # 'SOURCE_DIR': 'C:\\Users\\WY-ZY\\OneDrive\\Data\\',
+    'SOURCE_DIR': 'C:\\OneDrive\\Data\\',
     'BASE_DIR': os.path.dirname(os.path.abspath(__file__)),
 }
 

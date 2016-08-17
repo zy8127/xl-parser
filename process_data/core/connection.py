@@ -102,7 +102,11 @@ class ExcelSheet():
         self.df = DataFrame(data=list(self.recordset.GetRows()))
         self.df = self.df.T
         self.df.columns = self.column_names()
-        self.df = self.df.set_index('产品图号')
+
+        if self.stack:
+            self.df = self.df.set_index(['产品图号', '工序'])
+        else:
+            self.df = self.df.set_index('产品图号')
 
         if self.sheet == '东海.外协':
             col_names = ['产品类别', '外协盘存', '本月出库',

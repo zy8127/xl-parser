@@ -77,16 +77,10 @@ class ExcelSheet():
 
     def column_dates(self):
         # current_month_days
-        cmd = monthrange(
-            SD.year,
-            SD.month + 1
-        )
+        cmd = monthrange(SD.year, SD.month + 1)
         # current_month_last_day
-        cmld = date(
-            SD.year,
-            SD.month + 1,
-            cmd[1]
-        )
+        cmld = date(SD.year, SD.month + 1, cmd[1])
+
         return [SD + timedelta(days=i) for i in range(cmd[1])] + \
             [cmld - timedelta(days=1) for j in
              range((len(self.recordset.Fields)-cmd[1]-3))]
